@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-
+import '../styles/article.css';
 const Article = () => {
     const [article, setArticle] = useState(null);
 
@@ -23,9 +23,9 @@ const Article = () => {
     }
 
     return (
-    <div>
-        <h1>{article.title}</h1>
-        <p>{article.abstractText}</p>
+    <div className="article-container">
+        <h2 className="article-title">{article.title}</h2>
+        <p className="article-abstract">{article.abstractText}</p>
     </div>
     );
 };
