@@ -26,6 +26,7 @@ const Article = () => {
     <div className="article-container">
         <h2 className="article-title">{article.title}</h2>
         <p className="article-abstract">{article.abstractText}</p>
+        <p className="article-journal">{article.journalTitle}</p>
     </div>
     );
 };
