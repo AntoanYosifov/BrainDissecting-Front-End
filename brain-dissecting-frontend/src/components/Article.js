@@ -1,34 +1,20 @@
-import {useEffect, useState} from "react";
-import axios from "axios";
 import '../styles/article.css';
-const Article = () => {
-    const [article, setArticle] = useState(null);
 
-    useEffect(() => {
-        const fetchArticle = async () => {
-            try{
-                const response = await axios.get(`http://localhost:8080/api/articles/1`);
-                setArticle(response.data);
-            } catch (error) {
-                console.error('Error fetching article: ', error);
-            }
-
-        };
-
-        fetchArticle();
-    }, []);
-
-    if(!article){
-        return <div>Loading...</div>;
-    }
-
+const Article = ({article, toggleAbstractVisibility}) => {
     return (
-    <div className="article-container">
-        <h2 className="article-title">{article.title}</h2>
-        <p className="article-abstract">{article.abstractText}</p>
-        <p className="article-journal">{article.journalTitle}</p>
-    </div>
+        <div className="article-container">
+            <h2 className="article-title">{article.title}</h2>
+            <p className="article-journal">{article.journalTitle}</p>
+            <div>
+                <button onClick={() => toggleAbstractVisibility(article.id)}
+                        className="abstract-toggle-button"
+                >
+                    {article.isAbstractVisible ? "Overview-" : "Overview+"}
+                </button>
+            </div>
+            {article.isAbstractVisible && <p className="article-abstract">{article.abstractText}</p>}
+            <a className="article-link" href={article.link} target="_blank" rel="noopener noreferrer">Read online</a>
+        </div>
     );
 };
-
 export default Article;

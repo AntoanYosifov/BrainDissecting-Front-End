@@ -1,26 +1,49 @@
 .article-container {
+    color: white;
     padding: 20px;
-    margin: 100px;
-    border: 1px solid #ddd;
-    border-radius: 2px;
-    background-color: #413f3f;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(36, 129, 220, 0.66);
+    margin-bottom: 20px;
 }
 
 .article-title {
-    font-size: 24px;
-    font-weight: bold;
+    color: white;
+    font-size: 1.5em;
     margin-bottom: 10px;
-    color: #f1ecec;
-}
-
-.article-abstract {
-    font-size: 16px;
-    color: #f3f0f0;
 }
 
 .article-journal {
-    font-size: 20px;
-    color: #888;
+    font-size: 1em;
+    color: white;
     margin-bottom: 10px;
 }
 
+.abstract-toggle-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.abstract-toggle-button:hover {
+    background-color: #0056b3;
+}
+
+.article-abstract {
+    font-size: 1em;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.article-link {
+    font-size: 1em;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.article-link:hover {
+    text-decoration: underline;
+}
